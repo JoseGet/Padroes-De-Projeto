@@ -3,11 +3,24 @@ package PadrãoState;
 public class Ingresso {
 
     private StateIngresso stateIngresso;
-    private int quantidadeTotal = 10000;
+    public int quantidadeTotal = 10000;
     private boolean disponivel = true;
+    private int quantidadeCompra = 0;
 
-    void Ingresso(){
-        this.stateIngresso = new StateDisponivel();
+    Ingresso() {
+        this.stateIngresso = new StateDisponivel(this);
+    }
+
+    public StateIngresso getState() {
+        return stateIngresso;
+    }
+
+    public int getQuantidadeTotal() {
+        return this.quantidadeTotal;
+    }
+
+    public int getQuantidadeCompra() {
+        return this.quantidadeCompra;
     }
 
     public void changeState(StateIngresso stateingresso) {
@@ -15,8 +28,20 @@ public class Ingresso {
     }
 
 
-    public int setQuantidade(){
-        return this.quantidade = quantidade - 1;
+    public int setQuantidadeTotal() {
+        return this.quantidadeTotal = quantidadeTotal - 1;
+    }
+
+    public int adicionarUnidade() {
+        return this.quantidadeCompra++;
+    }
+
+    public int removeUnidade() {
+        return this.quantidadeCompra--;
+    }
+
+    public boolean setDisponivel() {
+        return this.disponivel = !disponivel;
     }
 
 }

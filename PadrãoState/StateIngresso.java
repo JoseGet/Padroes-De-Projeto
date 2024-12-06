@@ -2,7 +2,7 @@ package PadrãoState;
 
 public abstract class StateIngresso {
   
-    Ingresso ingresso = new Ingresso();
+    Ingresso ingresso;
 
     StateIngresso(Ingresso ingresso) {
         this.ingresso = ingresso;
@@ -10,7 +10,7 @@ public abstract class StateIngresso {
 
     public abstract String comprar();
     public abstract String cancelar(); 
-    public abstract String adicionarQuantidade();
-    public abstract String removerQuantidade();
+    public abstract String adicionarUnidade();
+    public abstract String removerUnidade();
 
 }

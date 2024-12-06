@@ -9,8 +9,8 @@ public class StateDisponivel extends StateIngresso {
     
     @Override
     public String comprar(){
-        return "Ingresso disponível para compra";
-        ingresso.changeState(new StateReservado());
+        ingresso.changeState(new StateReservado(ingresso));
+        return "Ingresso disponível para compra. Processo de compra inciado.";
     }
 
     @Override
@@ -19,12 +19,12 @@ public class StateDisponivel extends StateIngresso {
     }
 
     @Override
-    public String adicionarQuantidade(){
+    public String adicionarUnidade(){
         return "Impossível adicionar ingressos fora do processo de compra";
     }
 
     @Override 
-    public String removerQuantidade(){
+    public String removerUnidade(){
         return "Impossível remover ingressos fora do processo de compra";
     }
 

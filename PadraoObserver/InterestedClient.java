@@ -19,8 +19,8 @@ public class InterestedClient implements Observer {
 
     public void buyTicket(Ingresso ingresso) {
         if (ingresso.getTicketState().equals("Available")) {
+            ingresso.setOwner(this.clientName);     
             ingresso.setTicketState("Purchased");  
-            ingresso.setOwner(this.clientName);    
             System.out.println(clientName + " comprou o ingresso na posição " + ingresso.getTicketPosition());
         } else {
             System.out.println("O ingresso na posição " + ingresso.getTicketPosition() + " já foi comprado.");
